@@ -8,14 +8,6 @@ body{
     width: 90%;
     display: flex;
     justify-content: left;
-    /* display: grid; */
-    /* grid-template-areas: 
-    'configs values'
-    'calculator values'
-    'calculator values'
-    'calculator values'
-    'calculator values'
-    'calculator values'; */
 }
 
 #calculator {

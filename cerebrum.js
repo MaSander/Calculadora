@@ -1,30 +1,31 @@
 var currentHistory
-var history = []
-var comandsHistory = []
+var numbers = []
+var commands = []
 
 function func(event) {
-    var store = document.getElementById("input").value
-    currentHistory = document.getElementById("input").value = store + event
+    numbers[0] = document.getElementById("input").value += event;
+    console.log(numbers);
+    console.log(numbers.length);
+    console.log(commands.length);
 }
 
-function sum() {
-    
-}
-
-function subtract() {
-
-}
-
-function multiplicator() {
-
+function ops(event) {
+    if(numbers.length == commands.length){
+        commands[commands.length] = event;
+        return;
+    }
+    commands[commands.length] = event;
+    console.log(commands);
 }
 
 function comma() {
-
+    //insert comma in number
 }
 
 function equal() {
-    alert(currentHistory)
+    for(var item in history){
+        console.log(commandsHistory)
+    }
 }
 
 function clear() {
