@@ -38,7 +38,7 @@ function equal() {
                 result = parseFloat(numbers[i]) + parseFloat(numbers[i + 1])
                 break;
             case "divide":
-                result = parseFloat(numbers[i]) / parseFloat(numbers[i])
+                result = parseFloat(numbers[i]) / parseFloat(numbers[i + 1])
                 break;
         }
     }
