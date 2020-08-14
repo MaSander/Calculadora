@@ -37,6 +37,9 @@ function equal() {
             case "sum":
                 result = parseFloat(numbers[i]) + parseFloat(numbers[i + 1])
                 break;
+            case "divide":
+                result = parseFloat(numbers[i]) / parseFloat(numbers[i])
+                break;
         }
     }
     document.getElementById("input").value = result
