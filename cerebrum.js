@@ -4,7 +4,6 @@ var result = 0
 
 function func(event) {
     numbers[commands.length] = result = document.getElementById("input").value += event;
-    console.log(numbers)
 }
 
 function operations(event) {
@@ -16,34 +15,40 @@ function operations(event) {
         commands[commands.length] = event;
     }
     document.getElementById("input").value = ""
-    console.log(commands)
 }
 
 function score() {
     numbers[numbers.length - 1] = numbers[numbers.length - 1] + "."
-    console.log((numbers.length - 1) + " number in array")
     document.getElementById("input").value = numbers[numbers.length - 1]
 }
 
 function equal() {
-    for(var i = 0; i < numbers.length; i++ ){
+
+    var numberQnt = numbers.length
+    
+    for(var i = 0; i < numberQnt; i++ ){
+        var first = numbers[0]
+
+        if(numbers.length != 1) numbers.shift()
+
         switch (commands[i]){
             case "multiplicator":
-                result = parseFloat(numbers[i]) * parseFloat(numbers[i + 1])
+                numbers[0] = parseFloat(first) * parseFloat(numbers[0])
                 break;
             case "subtract":
-                result = parseFloat(numbers[i]) - parseFloat(numbers[i + 1])
+                numbers[0] = parseFloat(first) - parseFloat(numbers[0])
                 break;
             case "sum":
-                result = parseFloat(numbers[i]) + parseFloat(numbers[i + 1])
+                numbers[0] = parseFloat(first) + parseFloat(numbers[0])
                 break;
             case "divide":
-                result = parseFloat(numbers[i]) / parseFloat(numbers[i + 1])
+                numbers[0] = parseFloat(first) / parseFloat(numbers[0])
                 break;
         }
+
     }
-    document.getElementById("input").value = result
-    numbers = [result]
+
+    document.getElementById("input").value = numbers[0]
     commands = []
 }
 
